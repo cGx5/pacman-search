@@ -8,24 +8,25 @@ fi
 
 mkdir build
 
-gcc src/util.c src/dfs.c -std=c99 -o build/dfs.out
+gcc src/util.c src/spfa.c -std=c99 -o build/spfa.out
 
-if [ ! -f build/dfs.out ]; then
+if [ ! -f build/spfa.out ]; then
     echo 'compile failed'
     exit
 fi
 
 cd base
-python2 pacman.py -l tinyMaze -p SearchAgent
+python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs2
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python2 pacman.py -l mediumMaze -p SearchAgent
+python pacman.py -l mediumDottedMaze -p StayEastSearchAgent2
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python2 pacman.py -l bigMaze -z .5 -p SearchAgent
+python pacman.py -l mediumScaryMaze -p StayWestSearchAgent2
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
+
 echo 'all tests passed'

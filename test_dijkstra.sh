@@ -8,23 +8,23 @@ fi
 
 mkdir build
 
-gcc src/util.c src/dfs.c -std=c99 -o build/dfs.out
+gcc src/util.c src/dijkstra.c -std=c99 -o build/dijkstra.out
 
-if [ ! -f build/dfs.out ]; then
+if [ ! -f build/dijkstra.out ]; then
     echo 'compile failed'
     exit
 fi
 
 cd base
-python2 pacman.py -l tinyMaze -p SearchAgent
+python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python2 pacman.py -l mediumMaze -p SearchAgent
+python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python2 pacman.py -l bigMaze -z .5 -p SearchAgent
+python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
 if [ ! $? -eq 0 ]; then
   exit 1
 fi

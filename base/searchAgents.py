@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -247,6 +247,30 @@ class StayWestSearchAgent(SearchAgent):
     """
     def __init__(self):
         self.searchFunction = search.uniformCostSearch
+        costFn = lambda pos: 100 * pos[0]
+        self.searchType = lambda state: PositionSearchProblem(state, costFn)
+
+class StayEastSearchAgent2(SearchAgent):
+    """
+    An agent for position search with a cost function that penalizes being in
+    positions on the West side of the board.
+
+    The cost function for stepping into a position (x,y) is 1/2^x.
+    """
+    def __init__(self):
+        self.searchFunction = search.uniformCostSearch2
+        costFn = lambda pos: .5 ** pos[0]
+        self.searchType = lambda state: PositionSearchProblem(state, costFn, (1, 1), None, False)
+
+class StayWestSearchAgent2(SearchAgent):
+    """
+    An agent for position search with a cost function that penalizes being in
+    positions on the East side of the board.
+
+    The cost function for stepping into a position (x,y) is 2^x.
+    """
+    def __init__(self):
+        self.searchFunction = search.uniformCostSearch2
         costFn = lambda pos: 100 * pos[0]
         self.searchType = lambda state: PositionSearchProblem(state, costFn)
 
