@@ -16,17 +16,16 @@ if [ ! -f build/astar.out ]; then
 fi
 
 cd base
-python pacman.py -l mediumMaze -p SearchAgent -a fn=astar
+python2 pacman.py -l tinyMaze -p SearchAgent -a fn=astar
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python pacman.py -l mediumDottedMaze -p StayEastSearchAgent3
+python2 pacman.py -l mediumMaze -p SearchAgent -a fn=astar
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python pacman.py -l mediumScaryMaze -p StayWestSearchAgent3
+python2 pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-
 echo 'all tests passed'
