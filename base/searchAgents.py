@@ -274,6 +274,30 @@ class StayWestSearchAgent2(SearchAgent):
         costFn = lambda pos: 100 * pos[0]
         self.searchType = lambda state: PositionSearchProblem(state, costFn)
 
+class StayEastSearchAgent3(SearchAgent):
+    """
+    An agent for position search with a cost function that penalizes being in
+    positions on the West side of the board.
+
+    The cost function for stepping into a position (x,y) is 1/2^x.
+    """
+    def __init__(self):
+        self.searchFunction = search.aStarSearch
+        costFn = lambda pos: .5 ** pos[0]
+        self.searchType = lambda state: PositionSearchProblem(state, costFn, (1, 1), None, False)
+
+class StayWestSearchAgent3(SearchAgent):
+    """
+    An agent for position search with a cost function that penalizes being in
+    positions on the East side of the board.
+
+    The cost function for stepping into a position (x,y) is 2^x.
+    """
+    def __init__(self):
+        self.searchFunction = search.aStarSearch
+        costFn = lambda pos: 100 * pos[0]
+        self.searchType = lambda state: PositionSearchProblem(state, costFn)
+
 def manhattanHeuristic(position, problem, info={}):
     "The Manhattan distance heuristic for a PositionSearchProblem"
     xy1 = position

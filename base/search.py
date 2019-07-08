@@ -146,7 +146,8 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    return run(problem, '../build/astar.out', problem.costFn)
+
 
 
 # Abbreviations
