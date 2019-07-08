@@ -16,15 +16,15 @@ if [ ! -f build/spfa.out ]; then
 fi
 
 cd base
-python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs2
+python2 pacman.py -l mediumMaze -p SearchAgent -a fn=ucs2
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python pacman.py -l mediumDottedMaze -p StayEastSearchAgent2
+python2 pacman.py -l mediumDottedMaze -p StayEastSearchAgent2
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python pacman.py -l mediumScaryMaze -p StayWestSearchAgent2
+python2 pacman.py -l mediumScaryMaze -p StayWestSearchAgent2
 if [ ! $? -eq 0 ]; then
   exit 1
 fi

@@ -16,15 +16,15 @@ if [ ! -f build/dijkstra.out ]; then
 fi
 
 cd base
-python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+python2 pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+python2 pacman.py -l mediumDottedMaze -p StayEastSearchAgent
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
-python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+python2 pacman.py -l mediumScaryMaze -p StayWestSearchAgent
 if [ ! $? -eq 0 ]; then
   exit 1
 fi
