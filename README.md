@@ -13,7 +13,7 @@
 
 1. 请每个小组新建一个 repo
 2. 本周所有练习的代码，全部放在这个里面
-3. 修改 README.md，每一行填入你们的 姓名-学号 （例如 xiaohei-201813244t1）
+3. 修改 README.md，每一行填入你们的 姓名-学号-邮箱 （例如 xiaohei-201813244t1-suantoujun@jisuanke.com）
 4. 把 @xiaohei 拉入你们的 group 里，并设置我 owner。
 
 ---
