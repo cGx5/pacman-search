@@ -8,7 +8,9 @@ fi
 
 mkdir build
 
-gcc src/util.c src/spfa.c -std=c99 -o build/spfa.out
+cd src
+make spfa
+cd ..
 
 if [ ! -f build/spfa.out ]; then
     echo 'compile failed'

@@ -8,7 +8,9 @@ fi
 
 mkdir build
 
-gcc src/util.c src/dfs.c -std=c99 -o build/dfs.out
+cd src
+make dfs
+cd ..
 
 if [ ! -f build/dfs.out ]; then
     echo 'compile failed'

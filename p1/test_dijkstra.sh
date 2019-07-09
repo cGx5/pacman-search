@@ -8,7 +8,9 @@ fi
 
 mkdir build
 
-gcc src/util.c src/dijkstra.c -std=c99 -o build/dijkstra.out
+cd src
+make dijkstra
+cd ..
 
 if [ ! -f build/dijkstra.out ]; then
     echo 'compile failed'

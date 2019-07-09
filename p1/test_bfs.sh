@@ -8,7 +8,9 @@ fi
 
 mkdir build
 
-gcc src/util.c src/bfs.c -std=c99 -o build/bfs.out
+cd src
+make bfs
+cd ..
 
 if [ ! -f build/bfs.out ]; then
     echo 'compile failed'

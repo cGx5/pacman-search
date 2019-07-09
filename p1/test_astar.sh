@@ -8,7 +8,9 @@ fi
 
 mkdir build
 
-gcc src/util.c src/astar.c -std=c99 -o build/astar.out
+cd src
+make astar
+cd ..
 
 if [ ! -f build/astar.out ]; then
     echo 'compile failed'
