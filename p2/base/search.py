@@ -182,7 +182,7 @@ def opt(problem, heuristic):
     return run_mul(problem, '../build/2opt.out')
 
 def sa_2opt(problem, heuristic):
-    return run_mul(problem, '../build/sa_2opt.out')
+    return run_mul(problem, '../build/SA_2opt.out')
 
 # Abbreviations
 bfs = breadthFirstSearch
