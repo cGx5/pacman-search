@@ -20,7 +20,7 @@ fi
 cd base
 
 run() {
-  python2 pacman.py -p ReflexAgent -k 1 -l $1
+  python2 pacman.py -p ReflexAgent -k 2 -l $1 -g DirectionalGhost
   if [ ! $? -eq 0 ]; then
     exit 1
   fi
