@@ -31,6 +31,9 @@ void init(game_state_t *s) {
   scanf("%d", &s->num_ghosts);
   s->ghost_x = malloc(sizeof(int) * s->num_ghosts);
   s->ghost_y = malloc(sizeof(int) * s->num_ghosts);
+  for (i = 0; i < s->num_ghosts; i++) {
+    scanf("%d %d", &s->ghost_x[i], &s->ghost_y[i]);
+  } 
 }
 
 void destroy(game_state_t *s) {
