@@ -26,7 +26,7 @@ run() {
   fi
 }
 
-arr=(mediumClassic)
+arr=(openClassic)
 
 for element in ${arr[@]}
 do
