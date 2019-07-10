@@ -39,7 +39,9 @@ class ReflexAgent(Agent):
         x1, y1 = n - y1 - 1, x1
         data = '%i %i\n%s\n%i %i\n%s\n%i\n' % (n, m, walls, x1, y1, gameState.getFood(), len(ghosts))
         for x in ghosts:
-            data += '%i %i\n' % x.configuration.pos
+            x2, y2 = x.configuration.pos
+            x2, y2 = n - y2 - 1, x2
+            data += '%i %i\n' % (x2, y2)
         open('../build/tmp.txt', 'w').write(data)
         fp = open('../build/log.txt', 'a')
         fp.write('Standard Input:\n')
