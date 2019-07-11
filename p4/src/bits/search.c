@@ -4,14 +4,14 @@
 result bfs(graph *g, int src, int flag) { // bfs 搜索 
     result res;
 
-    res.dis = (int*) malloc(sizeof(int) * (g->vertex_cap) + 10);
+    res.dis = (int*) malloc(sizeof(int) * (g->vertex_cap + 10));
     memset(res.dis, 0x3f, sizeof(int) * (g->vertex_cap + 10));
     res.dis[src] = 0;
 
-    res.fa = (int*) malloc(sizeof(int) * (g->vertex_cap) + 10);
+    res.fa = (int*) malloc(sizeof(int) * (g->vertex_cap + 10));
     memset(res.fa, -1, sizeof(int) * (g->vertex_cap + 10));
 
-    res.dir = (char*) malloc(sizeof(char) * (g->vertex_cap) + 10);
+    res.dir = (char*) malloc(sizeof(char) * (g->vertex_cap + 10));
 
     queue q;
     queue_init(&q, g->vertex_cap * 10);
