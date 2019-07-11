@@ -14,7 +14,7 @@ result bfs(graph *g, int src, int flag) { // bfs 搜索
     res.dir = (char*) malloc(sizeof(char) * (g->vertex_cap) + 10);
 
     queue q;
-    queue_init(&q, g->vertex_cap * 1000);
+    queue_init(&q, g->vertex_cap * 10);
     queue_push(&q, src);
     int cnt = 0;
 
@@ -35,6 +35,7 @@ result bfs(graph *g, int src, int flag) { // bfs 搜索
             }
         }
     }
+    free(q.data);
     res.pos = -1;
     return res;
 }
@@ -47,4 +48,10 @@ void print(int fa[], char dir[], int u) {
     //printf("%d\n", u);
     if (fa[fa[u]])
     printf("%c", dir[u]);
+}
+
+void result_free(result *res) {
+    free(res->fa);
+    free(res->dir);
+    free(res->dis);
 }

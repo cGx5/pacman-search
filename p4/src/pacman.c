@@ -46,6 +46,9 @@ int main() {
   if (res.pos != -1) 
     print(res.fa, res.dir, res.pos);
 
+  graph_free(&g);
+  result_free(&res);
+
   //
   destroy(&state);
   return 0;

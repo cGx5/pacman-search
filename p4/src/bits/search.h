@@ -12,4 +12,6 @@ result bfs(graph *g, int src, int flag);
 
 void print(int fa[], char dir[], int u);
 
+void result_free(result *res);
+
 #endif

@@ -1,8 +1,8 @@
 #include "stdc++.h"
 
 void graph_free(graph *g) {/*{{{*/
-    //free(g->e);
-    //free(g->p);
+    free(g->e);
+    free(g->p);
 }/*}}}*/
 
 void add(graph *g, int u, int v, int w, char dir, int flag) {/*{{{*/

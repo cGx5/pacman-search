@@ -12,8 +12,6 @@ int queue_size(queue *q) {/*{{{*/
 }/*}}}*/
 
 void queue_expand(queue *q) {/*{{{*/
-    printf("**********************\n");
-    return ;
     q->cap *= 2;
     int *data = (int*)malloc(sizeof(int) * q->cap);
     for (int i = 0; i < q->r - q->l + 1; i++) {
