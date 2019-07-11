@@ -21,7 +21,7 @@ fi
 cd base
 
 run() {
-  python2 pacman.py -p ReflexAgent -k 1 -l $1 -g CustomGhost
+  python2 pacman.py -p CustomAgent -k 1 -l $1 -g CustomGhost
   if [ ! $? -eq 0 ]; then
     exit 1
   fi

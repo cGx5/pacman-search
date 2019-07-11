@@ -20,16 +20,7 @@ from subprocess import PIPE
 
 from game import Agent
 
-class ReflexAgent(Agent):
-    """
-      A reflex agent chooses an action at each choice point by examining
-      its alternatives via a state evaluation function.
-
-      The code below is provided as a guide.  You are welcome to change
-      it in any way you see fit, so long as you don't touch our method
-      headers.
-    """
-
+class CustomAgent(Agent):
     def run(self, gameState, path):
         walls = gameState.getWalls()
         ghosts = gameState.getGhostStates()
@@ -63,6 +54,19 @@ class ReflexAgent(Agent):
         return mp[stdout_data[0]]
 
     def getAction(self, gameState):
+        return self.run(gameState, '../build/simple.out')
+
+class ReflexAgent(Agent):
+    """
+      A reflex agent chooses an action at each choice point by examining
+      its alternatives via a state evaluation function.
+
+      The code below is provided as a guide.  You are welcome to change
+      it in any way you see fit, so long as you don't touch our method
+      headers.
+    """
+
+    def getAction(self, gameState):
         """
         You do not need to change this method, but you're welcome to.
 
@@ -82,7 +86,6 @@ class ReflexAgent(Agent):
         return legalMoves[chosenIndex]
 
         "Add more of your code here if you want to"
-        return self.run(gameState, '../build/simple.out')
 
 
     def evaluationFunction(self, currentGameState, action):
