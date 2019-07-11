@@ -33,19 +33,19 @@ class CustomAgent(Agent):
             x2, y2 = x.configuration.pos
             x2, y2 = n - y2 - 1, x2
             data += '%i %i\n' % (x2, y2)
-        open('../build/tmp.txt', 'w').write(data)
-        fp = open('../build/log.txt', 'a')
-        fp.write('Standard Input:\n')
-        fp.write(data + '\n')
+        #open('../build/tmp.txt', 'w').write(data)
+        #fp = open('../build/log.txt', 'a')
+        #fp.write('Standard Input:\n')
+        #fp.write(data + '\n')
         exec_name = path
         t = subprocess.Popen(exec_name, stdin=PIPE, stdout=PIPE, stderr=PIPE)
         stdout_data, stderr_data = t.communicate(input=bytes(data))
         stdout_data = str(stdout_data).strip()
         stderr_data = str(stderr_data).strip()
-        fp.write('Standard Output:\n')
-        fp.write(stdout_data + '\n')
-        fp.write('\nReturn Code:%i\n' % t.returncode)
-        fp.close()
+        #fp.write('Standard Output:\n')
+        #fp.write(stdout_data + '\n')
+        #fp.write('\nReturn Code:%i\n' % t.returncode)
+        #fp.close()
         assert t.returncode == 0
         from game import Directions
         mp = {'N':Directions.NORTH, 'S':Directions.SOUTH, 'W':Directions.WEST, 'E':Directions.EAST}
